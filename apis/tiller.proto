@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = ".;tiller";
+
+service StreamService {
+  rpc Stream (stream MessageRequest) returns (stream MessageResponse);
+}
+
+message MessageRequest {
+  string command = 1;
+}
+
+message MessageResponse {
+  string reply = 1;
+}
